@@ -6,6 +6,11 @@ import Root from "./Root.jsx";
 import AddCraft from "./pages/AddCraft.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import AuthProvider from "./AuthProvider/AuthProvider.jsx";
+import PrivateRoute from "./Routes/PrivateRoute.jsx";
+import AllProducts from "./pages/AllProducts.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,8 +24,28 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "/allProducts",
+        element: <AllProducts />,
+        loader: () => fetch("http://localhost:3000/crafts"),
+      },
+
+      {
+        path: "/login",
+        element: <Login />,
+      },
+
+      {
+        path: "/register",
+        element: <Register />,
+      },
+
+      {
         path: "/addCraft",
-        element: <AddCraft />,
+        element: (
+          <PrivateRoute>
+            <AddCraft />
+          </PrivateRoute>
+        ),
       },
     ],
   },
@@ -28,6 +53,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

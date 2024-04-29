@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+
 const AddCraft = () => {
+  const { user } = useContext(AuthContext);
+
   const handleAddCraft = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -152,6 +157,7 @@ const AddCraft = () => {
             </div>
             <input
               name="user_email"
+              value={user.email}
               type="email"
               placeholder="User Email"
               className="input input-bordered w-full"
@@ -163,6 +169,7 @@ const AddCraft = () => {
             </div>
             <input
               name="user_name"
+              value={user.displayName}
               type="text"
               placeholder="User Name"
               className="input input-bordered w-full"
