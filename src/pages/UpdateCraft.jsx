@@ -1,5 +1,5 @@
-import React from "react";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const UpdateCraft = () => {
   const item = useLoaderData();
@@ -49,7 +49,14 @@ const UpdateCraft = () => {
       body: JSON.stringify(updatedCraft),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        Swal.fire({
+          title: "Success!",
+          text: "Craft updated successfully",
+          icon: "success",
+          confirmButtonText: "Cool",
+        });
+      });
 
     console.log(updatedCraft);
   };
