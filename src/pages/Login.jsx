@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { FaGoogle } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  const { signInWithGoogle, login, user, isLoading } = useContext(AuthContext);
+  const { signInWithGoogle, login, signInWithGitHub } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -11,6 +14,23 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleGitHubSignIn = () => {
+    signInWithGitHub()
+      .then((result) => {
+        console.log(result.user);
+        Swal.fire({
+          title: "Success!",
+          text: "Logged in successfully",
+          icon: "success",
+          confirmButtonText: "Cool",
+        });
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
@@ -64,18 +84,25 @@ const Login = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
+              <button className="btn bg-blue-600 glass text-white">
+                Login
+              </button>
             </div>
-            <div>
-              <button onClick={handleGoogleSignIn} className="btn btn-primary">
-                Google
+            <div className="flex justify-center gap-8">
+              <button onClick={handleGoogleSignIn} className="btn btn-trans">
+                <FaGoogle className="text-xl" />
+              </button>
+              <button onClick={handleGitHubSignIn} className="btn btn-trans">
+                <FaGithub className="text-xl" />
               </button>
             </div>
 
             <label className="label">
               <p>
                 Do not have an account?{" "}
-                <Link to={"/register"}>Register here</Link>
+                <span className="text-blue-600">
+                  <Link to={"/register"}>Register here</Link>
+                </span>
               </p>
             </label>
           </form>

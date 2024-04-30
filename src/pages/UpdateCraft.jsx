@@ -1,6 +1,20 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 const UpdateCraft = () => {
+  const item = useLoaderData();
+  const {
+    _id,
+    image,
+    item_name,
+    subcategory_name,
+    short_description,
+    price,
+    rating,
+    customization,
+    processing_time,
+    stock_status,
+  } = item;
   const handleUpdateCraft = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -15,7 +29,7 @@ const UpdateCraft = () => {
     const processing_time = form.processing_time.value;
     const stock_status = form.stock_status.value;
 
-    const newCraft = {
+    const updatedCraft = {
       image,
       item_name,
       subcategory_name,
@@ -27,7 +41,17 @@ const UpdateCraft = () => {
       stock_status,
     };
 
-    console.log(newCraft);
+    fetch(`http://localhost:3000/update/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedCraft),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+
+    console.log(updatedCraft);
   };
 
   return (
@@ -39,6 +63,7 @@ const UpdateCraft = () => {
               <span className="label-text">Image URL</span>
             </div>
             <input
+              defaultValue={image}
               name="image"
               type="text"
               placeholder="Image URL"
@@ -50,6 +75,7 @@ const UpdateCraft = () => {
               <span className="label-text">Item Name</span>
             </div>
             <input
+              defaultValue={item_name}
               name="item_name"
               type="text"
               placeholder="Item Name"
@@ -61,6 +87,7 @@ const UpdateCraft = () => {
               <span className="label-text">Subcategory Name</span>
             </div>
             <input
+              defaultValue={subcategory_name}
               name="subcategory_name"
               type="text"
               placeholder="Subcategory Name"
@@ -72,6 +99,7 @@ const UpdateCraft = () => {
               <span className="label-text">Short Description</span>
             </div>
             <input
+              defaultValue={short_description}
               name="short_description"
               type="text"
               placeholder="Short Description"
@@ -83,6 +111,7 @@ const UpdateCraft = () => {
               <span className="label-text">Price</span>
             </div>
             <input
+              defaultValue={price}
               name="price"
               type="text"
               placeholder="Price"
@@ -94,6 +123,7 @@ const UpdateCraft = () => {
               <span className="label-text">Rating</span>
             </div>
             <input
+              defaultValue={rating}
               name="rating"
               type="text"
               placeholder="Rating"
@@ -105,6 +135,7 @@ const UpdateCraft = () => {
               <span className="label-text">Customization</span>
             </div>
             <input
+              defaultValue={customization}
               name="customization"
               type="text"
               placeholder="Customization"
@@ -116,6 +147,7 @@ const UpdateCraft = () => {
               <span className="label-text">Processing Time</span>
             </div>
             <input
+              defaultValue={processing_time}
               name="processing_time"
               type="text"
               placeholder="Processing Time"
@@ -127,6 +159,7 @@ const UpdateCraft = () => {
               <span className="label-text">Stock Status</span>
             </div>
             <input
+              defaultValue={stock_status}
               name="stock_status"
               type="text"
               placeholder="Stock Status"
