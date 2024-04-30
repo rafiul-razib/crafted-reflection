@@ -62,7 +62,7 @@ const Navbar = () => {
       <div className="navbar-end gap-4">
         {user ? (
           <>
-            <span>{user.email}</span>
+            <span className="hidden lg:block">{user.email}</span>
             <div
               tabIndex={0}
               role="button"
