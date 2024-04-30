@@ -3,7 +3,7 @@ import ItemCard from "./ItemCard";
 const CraftItems = ({ crafts }) => {
   const craftItems = crafts.slice(0, 6);
 
-  console.log(craftItems);
+  // console.log(craftItems);
 
   return (
     <div className="max-w-6xl mx-auto mt-16">
