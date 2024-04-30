@@ -20,7 +20,7 @@ const MyItemCard = ({ craft, myItems, setMyItems }) => {
   } = craft;
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3000/crafts/${id}`, {
+    fetch(`https://crafted-reflections-server.vercel.app/crafts/${id}`, {
       method: "DELETE",
     })
       .then((res) => {

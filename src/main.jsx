@@ -24,13 +24,15 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:3000/crafts"),
+        loader: () =>
+          fetch("https://crafted-reflections-server.vercel.app/crafts"),
       },
 
       {
         path: "/allProducts",
         element: <AllProducts />,
-        loader: () => fetch("http://localhost:3000/crafts"),
+        loader: () =>
+          fetch("https://crafted-reflections-server.vercel.app/crafts"),
       },
 
       {
@@ -40,7 +42,8 @@ const router = createBrowserRouter([
             <MyItems />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:3000/crafts"),
+        loader: () =>
+          fetch("https://crafted-reflections-server.vercel.app/crafts"),
       },
 
       {
@@ -51,14 +54,18 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/crafts/${params.id}`),
+          fetch(
+            `https://crafted-reflections-server.vercel.app/crafts/${params.id}`
+          ),
       },
 
       {
         path: "/updateItem/:id",
         element: <UpdateCraft />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/crafts/${params.id}`),
+          fetch(
+            `https://crafted-reflections-server.vercel.app/crafts/${params.id}`
+          ),
       },
 
       {

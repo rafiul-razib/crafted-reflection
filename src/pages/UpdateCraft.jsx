@@ -41,7 +41,7 @@ const UpdateCraft = () => {
       stock_status,
     };
 
-    fetch(`http://localhost:3000/update/${_id}`, {
+    fetch(`https://crafted-reflections-server.vercel.app/update/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

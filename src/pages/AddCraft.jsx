@@ -36,7 +36,7 @@ const AddCraft = () => {
 
     console.log(newCraft);
 
-    fetch("http://localhost:3000/crafts", {
+    fetch("https://crafted-reflections-server.vercel.app/crafts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
