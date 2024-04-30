@@ -44,7 +44,11 @@ const MyItemCard = ({ craft, myItems, setMyItems }) => {
         <p>Can be Customized : {customization}</p>
         <p>Stock : {stock_status}</p>
         <div className="card-actions justify-end">
-          <button className="btn glass bg-green-600 text-white">Update</button>
+          <Link to={`/updateItem/${_id}`}>
+            <button className="btn glass bg-green-600 text-white">
+              Update
+            </button>
+          </Link>
           <button
             onClick={() => handleDelete(_id)}
             className="btn glass bg-red-600 text-white"
