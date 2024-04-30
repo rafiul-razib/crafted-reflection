@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const { register } = useContext(AuthContext);
@@ -13,6 +14,24 @@ const Register = () => {
     const photo = form.photo.value;
     const password = form.password.value;
 
+    if (password.length < 6) {
+      Swal.fire({
+        title: "Error!",
+        text: "Password should be at least 6 character long",
+        icon: "error",
+        confirmButtonText: "Cool",
+      });
+      return;
+    } else if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{6,}$/.test(password)) {
+      Swal.fire({
+        title: "Error!",
+        text: "Password should contain at least 1 uppercase, 1 lowercase and a Number!",
+        icon: "error",
+        confirmButtonText: "Cool",
+      });
+      return;
+    }
+
     // const user = { name, email, photo, password };
     register(email, password)
       .then((result) => {
@@ -20,7 +39,12 @@ const Register = () => {
           displayName: name,
           photoURL: photo,
         }).then(() => {
-          alert("User registered successfully");
+          Swal.fire({
+            title: "Success!",
+            text: "User registered in successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
         });
 
         console.log(result.user);
@@ -28,6 +52,12 @@ const Register = () => {
 
       .catch((error) => {
         console.log(error);
+        Swal.fire({
+          title: "Error!",
+          text: error.message,
+          icon: "error",
+          confirmButtonText: "Try again",
+        });
       });
   };
 
