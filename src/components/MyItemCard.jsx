@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const MyItemCard = ({ craft, myItems, setMyItems }) => {
@@ -20,17 +20,35 @@ const MyItemCard = ({ craft, myItems, setMyItems }) => {
   } = craft;
 
   const handleDelete = (id) => {
-    fetch(`https://crafted-reflections-server.vercel.app/crafts/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => {
-        res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        const remaining = myItems.filter((item) => item._id !== id);
-        setMyItems(remaining);
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://crafted-reflections-server.vercel.app/crafts/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => {
+            res.json();
+          })
+          .then((data) => {
+            console.log(data);
+            const remaining = myItems.filter((item) => item._id !== id);
+            setMyItems(remaining);
+            Swal.fire({
+              title: "Success!",
+              text: "Deleted item successfully",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+          });
+      }
+    });
   };
   return (
     <div className="card card-compact rounded-none bg-base-100 shadow-xl">

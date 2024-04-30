@@ -61,7 +61,11 @@ const router = createBrowserRouter([
 
       {
         path: "/updateItem/:id",
-        element: <UpdateCraft />,
+        element: (
+          <PrivateRoute>
+            <UpdateCraft />
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://crafted-reflections-server.vercel.app/crafts/${params.id}`
