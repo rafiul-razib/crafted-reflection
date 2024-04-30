@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { useContext } from "react";
-import ItemCard from "../components/ItemCard";
+import MyItemCard from "../components/MyItemCard";
 
 const MyItems = () => {
   const { user } = useContext(AuthContext);
@@ -19,7 +19,7 @@ const MyItems = () => {
 
       <div className="grid grid-cols-3 gap-4">
         {userItems.map((item) => (
-          <ItemCard key={item._id} craft={item}></ItemCard>
+          <MyItemCard key={item._id} craft={item}></MyItemCard>
         ))}
       </div>
     </div>

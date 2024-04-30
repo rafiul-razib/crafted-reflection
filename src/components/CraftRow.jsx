@@ -1,5 +1,8 @@
+import { Link } from "react-router-dom";
+
 const CraftRow = ({ craft, idx }) => {
   const {
+    _id,
     image,
     item_name,
     subcategory_name,
@@ -19,7 +22,9 @@ const CraftRow = ({ craft, idx }) => {
       <td>{subcategory_name}</td>
       <td>{stock_status}</td>
       <td>
-        <btn className="btn btn-primary btn-xs">View Details</btn>
+        <Link to={`/crafts/${_id}`}>
+          <button className="btn btn-primary btn-xs">View Details</button>
+        </Link>
       </td>
     </tr>
   );

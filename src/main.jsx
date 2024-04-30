@@ -34,7 +34,11 @@ const router = createBrowserRouter([
 
       {
         path: "/myItems",
-        element: <MyItems />,
+        element: (
+          <PrivateRoute>
+            <MyItems />
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:3000/crafts"),
       },
 

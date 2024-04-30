@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ItemCard = ({ craft }) => {
+const MyItemCard = ({ craft }) => {
   const {
     _id,
     image,
@@ -22,9 +22,10 @@ const ItemCard = ({ craft }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{item_name}</h2>
-        <p>Category : {subcategory_name}</p>
         <p>Price : {price}</p>
         <p>Rating : {rating}</p>
+        <p>Can be Customized : {customization}</p>
+        <p>Stock : {stock_status}</p>
         <div className="card-actions justify-end">
           <Link to={`/crafts/${_id}`}>
             <button className="btn btn-primary">View Details</button>
@@ -35,4 +36,4 @@ const ItemCard = ({ craft }) => {
   );
 };
 
-export default ItemCard;
+export default MyItemCard;
