@@ -3,7 +3,7 @@ import CraftRow from "../components/CraftRow";
 
 const AllProducts = () => {
   const allCrafts = useLoaderData();
-  console.log(allCrafts);
+  // console.log(allCrafts);
   return (
     <div className="overflow-x-auto">
       <table className="table table-zebra">

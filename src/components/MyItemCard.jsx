@@ -1,6 +1,9 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const MyItemCard = ({ craft }) => {
+const MyItemCard = ({ craft, myItems, setMyItems }) => {
+  // const[crafts, setCrafts] = useState(null)
+
   const {
     _id,
     image,
@@ -15,6 +18,20 @@ const MyItemCard = ({ craft }) => {
     user_email,
     user_name,
   } = craft;
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:3000/crafts/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => {
+        res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        const remaining = myItems.filter((item) => item._id !== id);
+        setMyItems(remaining);
+      });
+  };
   return (
     <div className="card card-compact rounded-none bg-base-100 shadow-xl">
       <figure className="h-52">
@@ -27,9 +44,13 @@ const MyItemCard = ({ craft }) => {
         <p>Can be Customized : {customization}</p>
         <p>Stock : {stock_status}</p>
         <div className="card-actions justify-end">
-          <Link to={`/crafts/${_id}`}>
-            <button className="btn btn-primary">View Details</button>
-          </Link>
+          <button className="btn glass bg-green-600 text-white">Update</button>
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn glass bg-red-600 text-white"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

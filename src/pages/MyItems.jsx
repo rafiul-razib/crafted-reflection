@@ -1,14 +1,14 @@
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import MyItemCard from "../components/MyItemCard";
 
 const MyItems = () => {
   const { user } = useContext(AuthContext);
-  const crafts = useLoaderData();
+  const myCrafts = useLoaderData();
+  const userItems = myCrafts.filter((craft) => craft.user_email === user.email);
 
-  const userItems = crafts.filter((craft) => craft.user_email === user.email);
-  // console.log(userItems);
+  const [myItems, setMyItems] = useState(userItems);
 
   return (
     <div className="max-w-6xl mx-auto">
@@ -18,8 +18,13 @@ const MyItems = () => {
       </div>
 
       <div className="grid grid-cols-3 gap-4">
-        {userItems.map((item) => (
-          <MyItemCard key={item._id} craft={item}></MyItemCard>
+        {myItems.map((item) => (
+          <MyItemCard
+            key={item._id}
+            craft={item}
+            myItems={myItems}
+            setMyItems={setMyItems}
+          ></MyItemCard>
         ))}
       </div>
     </div>
