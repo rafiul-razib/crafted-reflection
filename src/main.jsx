@@ -11,6 +11,8 @@ import Register from "./pages/Register.jsx";
 import AuthProvider from "./AuthProvider/AuthProvider.jsx";
 import PrivateRoute from "./Routes/PrivateRoute.jsx";
 import AllProducts from "./pages/AllProducts.jsx";
+import CraftDetails from "./pages/CraftDetails.jsx";
+import MyItems from "./pages/MyItems.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,12 +23,30 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:3000/crafts"),
       },
 
       {
         path: "/allProducts",
         element: <AllProducts />,
         loader: () => fetch("http://localhost:3000/crafts"),
+      },
+
+      {
+        path: "/myItems",
+        element: <MyItems />,
+        loader: () => fetch("http://localhost:3000/crafts"),
+      },
+
+      {
+        path: "/crafts/:id",
+        element: (
+          <PrivateRoute>
+            <CraftDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/crafts/${params.id}`),
       },
 
       {
