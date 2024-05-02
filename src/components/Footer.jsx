@@ -1,11 +1,10 @@
-import logo from "../assets/Capture.png";
-import logo2 from "../assets/capture2.png";
+import logo2 from "../assets/Capture22.png";
 
 const Footer = () => {
   return (
     <footer className="footer p-10 bg-red-400 text-white">
       <aside>
-        <img src={logo} alt="" srcset="" />
+        <img src={logo2} alt="" />
         {/* <p>
           Crafted Reflections Ltd.
           <br />

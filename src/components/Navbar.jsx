@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import logo from "../assets/Capture.png";
+import logo2 from "../assets/Capture22.png";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -70,8 +71,12 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl text-orange-600">
-          <img className="w-40 lg:w-60" src={logo} alt="" srcset="" />
+        <a className="btn btn-ghost text-xl ml-0 pl-0 lg:ml-5 lg:pl-5 text-orange-600">
+          {theme === "light" ? (
+            <img className="w-40 lg:w-60" src={logo} alt="" />
+          ) : (
+            <img className="w-40 lg:w-60" src={logo2} alt="" />
+          )}
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -104,20 +109,20 @@ const Navbar = () => {
             </button>
           </>
         ) : (
-          <div className="flex gap-4">
+          <div className="flex mr-0 gap-2 lg:gap-4">
             <Link to={"/login"}>
               <button className="btn glass btn-md  bg-red-700 text-white">
                 Login
               </button>
             </Link>
             <Link to={"/register"}>
-              <button className="btn glass btn-md  bg-red-700 text-white">
+              <button className="btn glass btn-md hidden lg:block bg-red-700 text-white">
                 Register
               </button>
             </Link>
           </div>
         )}
-        <div>
+        <div className="px-0">
           <label className="swap swap-rotate">
             {/* this hidden checkbox controls the state */}
             <input
