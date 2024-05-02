@@ -14,6 +14,9 @@ import AllProducts from "./pages/AllProducts.jsx";
 import CraftDetails from "./pages/CraftDetails.jsx";
 import MyItems from "./pages/MyItems.jsx";
 import UpdateCraft from "./pages/UpdateCraft.jsx";
+import AddCategory from "./pages/AddCategory.jsx";
+import CategoryWise from "./pages/CategoryWise.jsx";
+import Payment from "./pages/Payment.jsx";
 
 const router = createBrowserRouter([
   {
@@ -89,6 +92,21 @@ const router = createBrowserRouter([
             <AddCraft />
           </PrivateRoute>
         ),
+      },
+
+      {
+        path: "/addCategory",
+        element: <AddCategory />,
+      },
+      {
+        path: "/category/:selectedCategory",
+        element: <CategoryWise />,
+        loader: () =>
+          fetch("https://crafted-reflections-server.vercel.app/crafts"),
+      },
+      {
+        path: "/payment",
+        element: <Payment />,
       },
     ],
   },

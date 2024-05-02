@@ -49,14 +49,15 @@ const AddCraft = () => {
         console.log(data);
         Swal.fire({
           title: "Success!",
-          text: "Item added in successfully",
+          text: "Item added successfully",
           icon: "success",
           confirmButtonText: "Cool",
         });
+        form.reset();
       });
   };
   return (
-    <div className="px-16 bg-orange-300">
+    <div className="px-8 lg:px-16 bg-red-300">
       <form onSubmit={handleAddCraft}>
         <div className="grid grid-cols-2 gap-4">
           <label className="form-control col-span-2">
@@ -64,6 +65,7 @@ const AddCraft = () => {
               <span className="label-text">Image URL</span>
             </div>
             <input
+              required
               name="image"
               type="text"
               placeholder="Image URL"
@@ -75,28 +77,40 @@ const AddCraft = () => {
               <span className="label-text">Item Name</span>
             </div>
             <input
+              required
               name="item_name"
               type="text"
               placeholder="Item Name"
               className="input input-bordered w-full"
             />
           </label>
+
           <label className="form-control">
             <div className="label">
               <span className="label-text">Subcategory Name</span>
             </div>
-            <input
+            <select
+              required
               name="subcategory_name"
-              type="text"
-              placeholder="Subcategory Name"
-              className="input input-bordered w-full"
-            />
+              className="select select-bordered"
+            >
+              <option disabled selected>
+                Pick one
+              </option>
+              <option>Card Making</option>
+              <option>Scrapbooking</option>
+              <option>Paper Quilling and Origami</option>
+              <option>Glass Painting</option>
+              <option>Lampworking</option>
+              <option>Glass Dyeing and Staining</option>
+            </select>
           </label>
           <label className="form-control">
             <div className="label">
               <span className="label-text">Short Description</span>
             </div>
             <input
+              required
               name="short_description"
               type="text"
               placeholder="Short Description"
@@ -108,6 +122,7 @@ const AddCraft = () => {
               <span className="label-text">Price</span>
             </div>
             <input
+              required
               name="price"
               type="text"
               placeholder="Price"
@@ -119,28 +134,36 @@ const AddCraft = () => {
               <span className="label-text">Rating</span>
             </div>
             <input
+              required
               name="rating"
               type="text"
               placeholder="Rating"
               className="input input-bordered w-full"
             />
           </label>
+
           <label className="form-control">
             <div className="label">
               <span className="label-text">Customization</span>
             </div>
-            <input
+            <select
+              required
               name="customization"
-              type="text"
-              placeholder="Customization"
-              className="input input-bordered w-full"
-            />
+              className="select select-bordered"
+            >
+              <option disabled selected>
+                Pick one
+              </option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
           </label>
           <label className="form-control">
             <div className="label">
               <span className="label-text">Processing Time</span>
             </div>
             <input
+              required
               name="processing_time"
               type="text"
               placeholder="Processing Time"
@@ -152,6 +175,7 @@ const AddCraft = () => {
               <span className="label-text">Stock Status</span>
             </div>
             <input
+              required
               name="stock_status"
               type="text"
               placeholder="Stock Status"
@@ -185,7 +209,7 @@ const AddCraft = () => {
           <input
             type="submit"
             value="Add Craft"
-            className="btn glass bg-orange-500 my-8 w-full text-white col-span-2"
+            className="btn glass bg-red-700 my-8 w-full text-white col-span-2"
           />
         </div>
       </form>

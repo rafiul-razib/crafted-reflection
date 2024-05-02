@@ -63,13 +63,13 @@ const MyItemCard = ({ craft, myItems, setMyItems }) => {
         <p>Stock : {stock_status}</p>
         <div className="card-actions justify-end">
           <Link to={`/updateItem/${_id}`}>
-            <button className="btn glass bg-green-600 text-white">
+            <button className="btn btn-sm glass bg-green-700 text-white">
               Update
             </button>
           </Link>
           <button
             onClick={() => handleDelete(_id)}
-            className="btn glass bg-red-600 text-white"
+            className="btn btn-sm glass bg-red-700 text-white"
           >
             Delete
           </button>

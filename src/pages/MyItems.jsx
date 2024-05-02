@@ -12,7 +12,9 @@ const MyItems = () => {
   const [myItems, setMyItems] = useState(userItems);
 
   const handleCustomization = (assert) => {
-    const customized = myCrafts.filter((item) => item.customization == assert);
+    const customized = myCrafts.filter(
+      (item) => item.customization.toLowerCase() == assert
+    );
     setMyItems(customized);
   };
 
@@ -28,7 +30,7 @@ const MyItems = () => {
           <div
             tabIndex={0}
             role="button"
-            className="btn glass mb-4 bg-green-500 text-white"
+            className="btn glass mb-4 bg-red-700 text-white"
           >
             Customization <IoIosArrowDown />
           </div>

@@ -23,7 +23,9 @@ const CraftRow = ({ craft, idx }) => {
       <td>{stock_status}</td>
       <td>
         <Link to={`/crafts/${_id}`}>
-          <button className="btn btn-primary btn-xs">View Details</button>
+          <button className="btn glass bg-red-700 text-white btn-xs">
+            View Details
+          </button>
         </Link>
       </td>
     </tr>

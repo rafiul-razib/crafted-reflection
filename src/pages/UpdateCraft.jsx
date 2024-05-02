@@ -62,7 +62,7 @@ const UpdateCraft = () => {
   };
 
   return (
-    <div className="px-16 bg-orange-300">
+    <div className="px-8 lg:px-16 bg-orange-300">
       <form onSubmit={handleUpdateCraft}>
         <div className="grid grid-cols-2 gap-4">
           <label className="form-control col-span-2">
@@ -93,13 +93,17 @@ const UpdateCraft = () => {
             <div className="label">
               <span className="label-text">Subcategory Name</span>
             </div>
-            <input
-              defaultValue={subcategory_name}
-              name="subcategory_name"
-              type="text"
-              placeholder="Subcategory Name"
-              className="input input-bordered w-full"
-            />
+            <select name="subcategory_name" className="select select-bordered">
+              <option disabled selected>
+                Pick one
+              </option>
+              <option>Card Making</option>
+              <option>Scrapbooking</option>
+              <option>Paper Quilling and Origami</option>
+              <option>Glass Painting</option>
+              <option>Lampworking</option>
+              <option>Glass Dyeing and Staining</option>
+            </select>
           </label>
           <label className="form-control">
             <div className="label">
@@ -141,13 +145,13 @@ const UpdateCraft = () => {
             <div className="label">
               <span className="label-text">Customization</span>
             </div>
-            <input
-              defaultValue={customization}
-              name="customization"
-              type="text"
-              placeholder="Customization"
-              className="input input-bordered w-full"
-            />
+            <select name="customization" className="select select-bordered">
+              <option disabled selected>
+                Pick one
+              </option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
           </label>
           <label className="form-control">
             <div className="label">
@@ -177,7 +181,7 @@ const UpdateCraft = () => {
           <input
             type="submit"
             value="Update Craft"
-            className="btn glass bg-orange-500 my-8 w-full text-white col-span-2"
+            className="btn glass bg-red-700 my-8 w-full text-white col-span-2"
           />
         </div>
       </form>

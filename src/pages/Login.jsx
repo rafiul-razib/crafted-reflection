@@ -102,9 +102,7 @@ const Login = () => {
               />
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-blue-600 glass text-white">
-                Login
-              </button>
+              <button className="btn bg-red-700 glass text-white">Login</button>
             </div>
             <div className="flex justify-center gap-8">
               <button onClick={handleGoogleSignIn} className="btn btn-trans">
@@ -115,7 +113,7 @@ const Login = () => {
               </button>
             </div>
 
-            <label className="label">
+            <label className="label mx-auto">
               <p>
                 Do not have an account?{" "}
                 <span className="text-blue-600">
