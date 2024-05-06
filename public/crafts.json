@@ -1,7 +1,7 @@
 {
     "card_making": [
       {
-        "image": "card1.jpg",
+        "image": "https://i.ibb.co/wd03NNZ/crafted-Reflection-10.jpg",
         "item_name": "Handmade Floral Greeting Card",
         "subcategory_name": "Card Making",
         "short_description": "Beautiful floral design, perfect for any occasion.",
@@ -12,7 +12,7 @@
         "stock_status": "In stock"
       },
       {
-        "image": "card2.jpg",
+        "image": "https://i.ibb.co/DkTSW6w/crafted-Reflection-12.jpg",
         "item_name": "Quilled Birthday Card",
         "subcategory_name": "Card Making",
         "short_description": "Intricately quilled design with vibrant colors.",
@@ -25,7 +25,7 @@
     ],
     "scrapbooking": [
       {
-        "image": "scrapbook1.jpg",
+        "image": "https://i.ibb.co/7y43rj8/crafted-Reflection-13.jpg",
         "item_name": "Vintage Memories Scrapbook Kit",
         "subcategory_name": "Scrapbooking",
         "short_description": "Capture your memories with this vintage-themed scrapbook kit.",
@@ -36,7 +36,7 @@
         "stock_status": "In stock"
       },
       {
-        "image": "scrapbook2.jpg",
+        "image": "https://i.ibb.co/HpWJ4MY/crafted-Reflection-14.jpg",
         "item_name": "Travel Adventure Scrapbook Album",
         "subcategory_name": "Scrapbooking",
         "short_description": "Document your adventures with this themed scrapbook album.",
@@ -49,7 +49,7 @@
     ],
     "paper_quilling_origami": [
       {
-        "image": "quilling1.jpg",
+        "image": "https://i.ibb.co/HTH2Mgx/crafted-Reflection-15.jpg",
         "item_name": "Paper Quilled Wall Art",
         "subcategory_name": "Paper Quilling and Origami",
         "short_description": "Handcrafted paper quilled art piece for your walls.",
@@ -60,7 +60,7 @@
         "stock_status": "In stock"
       },
       {
-        "image": "origami1.jpg",
+        "image": "https://i.ibb.co/phJkVVq/crafted-Reflection-16.jpg",
         "item_name": "Origami Crane Mobile",
         "subcategory_name": "Paper Quilling and Origami",
         "short_description": "Graceful origami crane mobile for home decoration.",
@@ -73,7 +73,7 @@
     ],
     "glass_painting": [
       {
-        "image": "glasspainting1.jpg",
+        "image": "https://i.ibb.co/MR8XgSk/crafted-Reflection-18.jpg",
         "item_name": "Stained Glass Window Panel",
         "subcategory_name": "Glass Painting",
         "short_description": "Colorful stained glass panel for windows or doors.",
@@ -84,7 +84,7 @@
         "stock_status": "In stock"
       },
       {
-        "image": "glasspainting2.jpg",
+        "image": "https://i.ibb.co/J5mcK4q/crafted-Reflection-19.jpg",
         "item_name": "Glass Painted Vase",
         "subcategory_name": "Glass Painting",
         "short_description": "Elegant glass vase hand-painted with floral motifs.",
@@ -97,7 +97,7 @@
     ],
     "lampworking": [
       {
-        "image": "lampwork1.jpg",
+        "image": "https://i.ibb.co/Vwv4FVR/crafted-Reflection-20.jpg",
         "item_name": "Hand Blown Glass Pendant",
         "subcategory_name": "Lampworking",
         "short_description": "Exquisite hand-blown glass pendant for jewelry making.",
@@ -108,7 +108,7 @@
         "stock_status": "In stock"
       },
       {
-        "image": "lampwork2.jpg",
+        "image": "https://i.ibb.co/ZTxHcR3/crafted-Reflection-1.jpg",
         "item_name": "Glass Bead Earrings",
         "subcategory_name": "Lampworking",
         "short_description": "Unique lampworked glass bead earrings for a stylish look.",
@@ -121,7 +121,7 @@
     ],
     "glass_dyeing_staining": [
       {
-        "image": "glassdyeing1.jpg",
+        "image": "https://i.ibb.co/h1gScG6/crafted-Reflection-2.jpg",
         "item_name": "Hand Dyed Glass Coasters",
         "subcategory_name": "Glass Dyeing and Staining",
         "short_description": "Set of 4 hand-dyed glass coasters to protect your surfaces.",
@@ -132,7 +132,7 @@
         "stock_status": "In stock"
       },
       {
-        "image": "glassdyeing2.jpg",
+        "image": "https://i.ibb.co/Fsp9WNW/crafted-Reflection-3.jpg",
         "item_name": "Stained Glass Suncatcher",
         "subcategory_name": "Glass Dyeing and Staining",
         "short_description": "Beautiful stained glass suncatcher to add color to your windows.",

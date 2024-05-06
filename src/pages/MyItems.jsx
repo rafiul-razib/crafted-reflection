@@ -12,7 +12,7 @@ const MyItems = () => {
   const [myItems, setMyItems] = useState(userItems);
 
   const handleCustomization = (assert) => {
-    const customized = myCrafts.filter(
+    const customized = userItems.filter(
       (item) => item.customization.toLowerCase() == assert
     );
     setMyItems(customized);

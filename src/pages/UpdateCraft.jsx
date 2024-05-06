@@ -70,6 +70,7 @@ const UpdateCraft = () => {
               <span className="label-text">Image URL</span>
             </div>
             <input
+              required
               defaultValue={image}
               name="image"
               type="text"
@@ -82,6 +83,7 @@ const UpdateCraft = () => {
               <span className="label-text">Item Name</span>
             </div>
             <input
+              required
               defaultValue={item_name}
               name="item_name"
               type="text"
@@ -93,7 +95,11 @@ const UpdateCraft = () => {
             <div className="label">
               <span className="label-text">Subcategory Name</span>
             </div>
-            <select name="subcategory_name" className="select select-bordered">
+            <select
+              required
+              name="subcategory_name"
+              className="select select-bordered"
+            >
               <option disabled selected>
                 Pick one
               </option>
@@ -110,6 +116,7 @@ const UpdateCraft = () => {
               <span className="label-text">Short Description</span>
             </div>
             <input
+              required
               defaultValue={short_description}
               name="short_description"
               type="text"
@@ -122,6 +129,7 @@ const UpdateCraft = () => {
               <span className="label-text">Price</span>
             </div>
             <input
+              required
               defaultValue={price}
               name="price"
               type="text"
@@ -134,6 +142,7 @@ const UpdateCraft = () => {
               <span className="label-text">Rating</span>
             </div>
             <input
+              required
               defaultValue={rating}
               name="rating"
               type="text"
@@ -145,7 +154,11 @@ const UpdateCraft = () => {
             <div className="label">
               <span className="label-text">Customization</span>
             </div>
-            <select name="customization" className="select select-bordered">
+            <select
+              required
+              name="customization"
+              className="select select-bordered"
+            >
               <option disabled selected>
                 Pick one
               </option>
@@ -158,6 +171,7 @@ const UpdateCraft = () => {
               <span className="label-text">Processing Time</span>
             </div>
             <input
+              required
               defaultValue={processing_time}
               name="processing_time"
               type="text"
@@ -170,6 +184,7 @@ const UpdateCraft = () => {
               <span className="label-text">Stock Status</span>
             </div>
             <input
+              required
               defaultValue={stock_status}
               name="stock_status"
               type="text"
